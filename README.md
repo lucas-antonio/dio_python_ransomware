@@ -142,7 +142,7 @@ def criar_mensagem_resgate():
 
 
 
-![Explicação do sexto código de bloco](Images/06_Execucao_principal.png)
+![Explicação do sexto código de bloco](Images/05_Execucao_principal.png)
 
 ```
 def main():
@@ -193,74 +193,101 @@ abrindo os arquivos é possível ver que eles se encontram criptografados
 
 ![Arquivo de senha criptografado](Images/12_Senhas_criptografadas.png)
 
+![Arquivo leia_isso](Images/13_leia_isso_arquivo.png)
+
 ## Descriptografando os arquivos
 
 ⚠️ **Aviso:** Parte da lógica desse programa segue a mesma lógica do primeiro, sendo necessário estar na mesma pasta dos arquivos que vão ser descriptografados.
 
-
-![Arquivo de senha criptografado](Images/12_Senhas_criptografadas.png)
-
-
-![Arquivo de senha criptografado](Images/12_Senhas_criptografadas.png)
-
-
-![Arquivo de senha criptografado](Images/12_Senhas_criptografadas.png)
-
-
-![Arquivo de senha criptografado](Images/12_Senhas_criptografadas.png)
-
-
-![Arquivo de senha criptografado](Images/12_Senhas_criptografadas.png)
-
-
-![Arquivo de senha criptografado](Images/12_Senhas_criptografadas.png)
-
+![Explicação_do_primeiro_código_de_bloco](Images/14_Carregar_chave_descriptografia.png)
 
 ```
 from cryptography.fernet import Fernet   
 import os
 ```
 
+📋**Código repetido:** a explicação para essa parte já foi dada anteriormente
+
 ```
 def carregar_chave():
     return open("chave.key", "rb").read().strip()
 ```
 
-def descriptografar_arquivo(arquivo,chave):
-    f = Fernet(chave)
-    with open(arquivo, "rb") as file:
-        dados = file.read().strip()
-        dados_descriptografados = f.decrypt(dados)
-    with open(arquivo, "wb") as file:
+lê o arquivo "chave.key" criado pelo software de criptografia(ransomware)
+
+![Explicação_do_segundo_código_de_bloco](Images/15_Descriptografar_arquivos.png)
+
+`def descriptografar_arquivo(arquivo,chave):`
+
+cria a função descriptografar arquivo
+
+`f = Fernet(chave)`
+
+cria uma instância para permitir os métodos da classe Fernet da biblioteca de criptografia  
+
+```
+with open(arquivo, "rb") as file:
+  dados = file.read().strip()
+  dados_descriptografados = f.decrypt(dados)
+```
+lê os conteúdos dos arquivos criptografados e os descriptografa usando a variável "dados descriptografados" 
+
+```
+with open(arquivo, "wb") as file:
         file.write(dados_descriptografados)
+```
 
-def encontrar_arquivos(diretorio):
-    lista = []
-    for raiz, _, arquivos in os.walk(diretorio):
-        for nome in arquivos:
-            caminho = os.path.join(raiz, nome)
-            if nome != "ransomware.py" and nome != "LEIA ISSO.txt" and nome != "descriptografar.py" and not nome.endswith(".key"):
-                lista.append(caminho)
-    return lista
+reescreve o conteúdo do arquivo para a versão descriptografada 
 
-def main():
+![Explicação_do_terceiro_código_de_bloco](Images/16_Encontrar_arquivos_descriptografia.png)
+
+`def encontrar_arquivos(diretorio):`
+
+cria a função encontrar arquivos
+
+![Explicação_do_quarto_código_de_bloco](Images/17_Execucao_principal.png)
+
+```
+lista = []
+  for raiz, _, arquivos in os.walk(diretorio):
+    for nome in arquivos:
+      caminho = os.path.join(raiz, nome)
+      if nome != "ransomware.py" and nome != "LEIA ISSO.txt" and nome != "descriptografar.py" and not nome.endswith(".key"):
+        lista.append(caminho)
+  return lista
+```
+
+cria uma lista vazia, percorre todos os arquivos do diretório de forma recursiva e ignora os arquivos "ransmoware.py", "LEIA ISSO.txt", "descriptografar.py" e arquivos com extensão ".key" e adiciona o resto dos arquivos na lista.
+
+![Explicação_do_quinto_código_de_bloco](Images/18_Execucao_do_programa.png)
+
+`def main():`
+
+cria a função main
+
+```
     chave = carregar_chave()
     diretorio = os.getcwd()
     arquivos = encontrar_arquivos(diretorio)
     for arquivo in arquivos: 
         descriptografar_arquivo(arquivo, chave)
     print("Arquivos restaurados com sucesso")
+```
 
+❗**Complicação**: criei a variável diretório por ter tido problema com os caminhos do diretório, porém se o for fixo o nome e não tiver algum tipo de problema ao ler esse nome, pode só deixar o nome do diretório entre aspas.
+
+📋**Código repetido:** a explicação para essa parte já foi dada anteriormente
+
+```
 if __name__ == "__main__":
     main()
+```
 
+📋**Código repetido:** a explicação para essa parte já foi dada anteriormente
 
+![Colocando_o_programa_na_pasta](Images/19_Colocando_o_programa_na_pasta.png)
 
-⚕️ **Síntese:** 
-
-
-❗**Complicação**: 
-
+![Executando_descriptografia](Images/20_Executando_descriptografia.png)
 
 ## Conclusão
-Existem várias maneiras e ferramentas que permitem invadir um site ou sistema. Por isso é necessário estar ciente de possíveis vetores de ataques como senhas padrões, versões antigas de programas que podem conter falhas e etc. Vigilância constante, boas práticas e estar ciente dos métodos, do modo como esses programas funcionam e tecnologias mais atuais são as maneiras mais eficazes de mitigar ataques. 
+Como um usuário ou empregado que trabalha como informações sensíveis e sigilosas, é importante manter backups frequentes dos seus dados relevantes, isso pode evitar o cenário de ficar refém dessas informações.
