@@ -9,13 +9,14 @@ Guia descrevendo uma simulação de captura de dados através de malware usando 
 ## Ferramentas necessárias
 Ambiente de desenvolvimento(esse projeto usa vim, mas fica a gosto pessoal, sendo necessário adaptar as partes para que se encaixem no caso específico)
 + vim
-  + Arch linux: ````sudo pacman -S vim````
-  + Debian/Ubuntu: ````sudo apt update && sudo apt install vim -y````
-  + Fedora: ````sudo dnf install vim````
+  + Arch linux: `sudo pacman -S vim`
+  + Debian/Ubuntu: `sudo apt update && sudo apt install vim -y`
+  + Fedora: `sudo dnf install vim`
   + Windows: https://www.vim.org/download.php
-+ python 3
-  +
-  +
++ python
+  + Arch linux: `sudo pacman -S python` 
+  + Debian/Ubuntu: `sudo apt install python3`
+  + Fedora: `sudo dnf install python3` 
 + dados_confidenciais.txt
 + senhas.txt
 
