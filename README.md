@@ -16,7 +16,8 @@ Ambiente de desenvolvimento(esse projeto usa vim, mas fica a gosto pessoal, send
 + python
   + Arch linux: `sudo pacman -S python` 
   + Debian/Ubuntu: `sudo apt install python3`
-  + Fedora: `sudo dnf install python3` 
+  + Fedora: `sudo dnf install python3`
+  + Windows: https://www.python.org/downloads/windows/
 + dados_confidenciais.txt
 + senhas.txt
 
