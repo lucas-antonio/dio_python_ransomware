@@ -1,4 +1,4 @@
-# Simulação de malware de captura de dados usando python no metasploitable
+# Simulação de malware de captura de dados usando python
 ![Ransomware template](Ransomware_template.jpg)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Python Badge](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)]()
