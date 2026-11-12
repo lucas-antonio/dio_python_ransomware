@@ -385,4 +385,14 @@ a diferença da versão do windows é o uso do da biblioteca pynput para captura
 outra diferença para a versão do linux é o finally que garante que o temporizador irá contar e enviar mesmo que possa ter acontecido algum erro durante a execução do código antes dessa parte. Como ambas as versões só diferenciam por usar bibliotecas diferentes na captura das teclas, não é necessário explicar o resto do código, que funciona de maneira similar ao linux, trocando apenas para os comandos equivalentes da biblioteca do teclado específica.
 
 ## Conclusão
-Como um usuário ou empregado que trabalha como informações sensíveis e sigilosas, é importante manter backups frequentes dos seus dados relevantes, isso pode evitar o cenário de ficar refém dessas informações.
+Para evitar se tornar alvo de ransomware faça backups constantes de informações sensíveis e sigilosas. Ter um cronograma que leva os horários de backup e a frequência pode evitar perder horas, semanas ou até meses importantes de dados.
+
+Adote outras práticas importantes para evitar tanto ataques de ransomware como keylogger, medidas como: 
++ Não executar programas de fontes desconhecidas
++ Mantenha seu antivírus ativo e atualizado
++ Controle o acesso e permissões de cada usuário
++ Crie regras para apenas permitir que portas específicas possam trocar dados com a internet
++ Troque senhas padrões ou fracas por senhas mais fortes
++ Tenha uma periodização para trocas de senhas
+
+Medidas de segurança podem ajudar a mitigar problemas ou ataques, porém ataques podem mudar ou se tornar mais sofisticados. Apenas a eterna vigilância e preparo pode garantir que quando a ameaça aparecer, uma resposta rápida será dada para evitar o estrago causado por ela.
