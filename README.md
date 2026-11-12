@@ -14,12 +14,14 @@ Ambiente de desenvolvimento(esse projeto usa vim, mas fica a gosto pessoal, send
   + Fedora: `sudo dnf install vim`
   + Windows: https://www.vim.org/download.php
 + python
-  + Arch linux: `sudo pacman -S python` 
-  + Debian/Ubuntu: `sudo apt install python3`
-  + Fedora: `sudo dnf install python3`
+  + Arch linux: `sudo pacman -S python python-pip` 
+  + Debian/Ubuntu: `sudo apt install python3 python3-pip`
+  + Fedora: `sudo dnf install python3 python3-pip`
   + Windows: https://www.python.org/downloads/windows/
 + dados_confidenciais.txt
 + senhas.txt
+
+⚠️ **Aviso:** pip já vem instalando em versões mais recentes do python no windows
 
 💡 **Sugestão:** habilite o destaque de sintaxe do vim usando ````:syntax on```` no modo normal
 
@@ -290,6 +292,58 @@ if __name__ == "__main__":
 ![Colocando_o_programa_na_pasta](Images/19_Colocando_o_programa_na_pasta.png)
 
 ![Executando_descriptografia](Images/20_Executando_descriptografia.png)
+
+⚕️ **Síntese:** faça backups constantes para evitar perder dados importantes
+
+## Keylogger
+
+### Versão linux
+
+instalação da biblioteca keyboard
+
+`pip install keyboard`
+
+❗**Complicação**: as versões dos sistemas atuais do linux usam wayland como protocolo de comunicação por ser mais seguro. A biblioteca pynput foi projetada com x11 em mente. Foi necessário migrar para a biblioteca keyboard para evitar os bugs do pynput.
+
+![Explicação_do_primeiro_código_de_bloco](Images/21_teclas_a_ignorar.png)
+
+explicando parte 1 do código
+
+![Explicação_do_segundo_código_de_bloco](Images/22_filtrar_saida_de_teclas_no_log.png)
+
+explicando parte 2 do código
+
+![Explicação_do_terceiro_código_de_bloco](Images/23_evento_e_condicao.png)
+
+explicando parte 3 do código
+
+execute o programa
+
+`sudo python <nome_do_arquivo.py`
+
+⚠️ **Aviso:**: a biblioteca keyboard exige permissão de super usuário(sudo) para ser executado
+
+![Executando o keylogger](Images/99_keylogger_em_execucao.png)
+
+é possível checar o arquivo log.txt para ver a captura das teclas digitadas
+
+![Executando o keylogger](Images/100_captura_das_teclas_no_keylogger.png)
+
+💡 **Sugestão:** é possível rodar o script em background usando o comando `sudo -b <programa.py`
+
+### Versão windows
+
+## Enviando os dados de forma remota
+
+⚠️ **Aviso:**: é preciso habilitar verificação em 2 etapas e chave de acesso para o próximo passo. Não será explicado como criar conta google ou habilitar a verificação ou chave, mas será disponibilizado links para consulta.
+
++ verificação em 2 etapas: https://support.google.com/accounts/answer/10956730?hl=pt-BR
++ chave de acesso:  myaccount.google.com/apppasswords 
+
+é necessário também ter a biblioteca smtplib(ela já vem por padrão no python, mas caso não tenha, use o código abaixo)
+
+`pip install secure-smtplib`
+
 
 ## Conclusão
 Como um usuário ou empregado que trabalha como informações sensíveis e sigilosas, é importante manter backups frequentes dos seus dados relevantes, isso pode evitar o cenário de ficar refém dessas informações.
