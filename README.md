@@ -293,45 +293,43 @@ if __name__ == "__main__":
 
 ![Executando_descriptografia](Images/20_Executando_descriptografia.png)
 
-⚕️ **Síntese:** faça backups constantes para evitar perder dados importantes
-
 ## Keylogger
 
 ### Versão linux
 
-instalação da biblioteca keyboard
+Instalação da biblioteca keyboard
 
 `pip install keyboard`
 
 ❗**Complicação**: as versões dos sistemas atuais do linux usam wayland como protocolo de comunicação por ser mais seguro. A biblioteca pynput foi projetada com x11 em mente. Foi necessário migrar para a biblioteca keyboard para evitar os bugs do pynput.
 
-![Explicação_do_primeiro_código_de_bloco](Images/21_teclas_a_ignorar.png)
+![Explicação_do_primeiro_código_de_bloco](Images/21_keylogger_linux_teclas_a_ignorar.png)
 
-explicando parte 1 do código
+cria uma lista com as teclas que vão ser ignoradas pelo keylogger
 
-![Explicação_do_segundo_código_de_bloco](Images/22_filtrar_saida_de_teclas_no_log.png)
+![Explicação_do_segundo_código_de_bloco](Images/22_keylogger_linux_filtrar_saida_de_teclas_no_log.png)
 
-explicando parte 2 do código
+cria uma função que capta o que está sendo digitado, escreve no arquivo "log.txt" e faz o tratamento para teclas especiais como ctrl ou shift
 
-![Explicação_do_terceiro_código_de_bloco](Images/23_evento_e_condicao.png)
+![Explicação_do_terceiro_código_de_bloco](Images/23_keylogger_linux_evento_e_condicao.png)
 
-explicando parte 3 do código
+captura a tecla quando for pressionada, além de ter a condição de encerrar o programa quando o "esc" for apertado
+
+💡 **Sugestão:** você pode fazer o programa capturar todas as teclas incluindo o esc, apenas deixando a string do keyboard.wat vazio
 
 execute o programa
 
 `sudo python <nome_do_arquivo.py`
 
-⚠️ **Aviso:**: a biblioteca keyboard exige permissão de super usuário(sudo) para ser executado
+![Executando o keylogger](Images/24_keylogger_linux_em_execucao.png)
 
-![Executando o keylogger](Images/99_keylogger_em_execucao.png)
+⚠️ **Aviso:**: a biblioteca keyboard exige permissão de super usuário(sudo) para ser executado
 
 é possível checar o arquivo log.txt para ver a captura das teclas digitadas
 
-![Executando o keylogger](Images/100_captura_das_teclas_no_keylogger.png)
+![Checando_o_resultado](Images/25_keylogger_linux_captura_das_teclas_no_keylogger)
 
 💡 **Sugestão:** é possível rodar o script em background usando o comando `sudo -b <programa.py`
-
-### Versão windows
 
 ## Enviando os dados de forma remota
 
@@ -344,6 +342,37 @@ execute o programa
 
 `pip install secure-smtplib`
 
+![Explicação_do_primeiro_código_de_bloco](Images/26_keylogger_email_linux_preparacao.png)
+
+carrega as bibliotecas necessárias e configura o email senha de acesso para poder usar o smtplib
+
+![Explicação_do_segundo_código_de_bloco](Images/27_keylogger_email_linux_funcao_email.png)
+
+checa se o log está vazio, cria o header do email e envia a mensagem de email com as teclas que foram capturadas pelo log
+
+![Explicação_do_terceiro_código_de_bloco](Images/28_keylogger_email_linux_funcao_de_captura_de_teclas.png)
+
+faz o tratamento das teclas especiais e adiciona elas ao corpo da mensagem que vai ser enviada por email
+
+![Explicação_do_quarto_código_de_bloco](Images/29_keylogger_email_linux_parte_final.png)
+
+captura as teclas pressionadas e depois executa a função de enviar_email
+
+![Execucao_do_código](Images/30_keylogger_email_linux_em_execucao.png)
+
+execute o script
+
+`sudo <arquivo.py>`
+
+![Checar_o_email](Images/31_keylogger_email_linux_recebimento.png)
+
+cheque o email para ter certeza que o programa está enviando os dados para o email
+
+![Email_aberto](Images/32_keylogger_email_linux_resultado.png)
+
+### Versão windows
+
+Tanto a versão do windows possuem a mesma lógica. Essa seção se focará apenas nas diferenças.
 
 ## Conclusão
 Como um usuário ou empregado que trabalha como informações sensíveis e sigilosas, é importante manter backups frequentes dos seus dados relevantes, isso pode evitar o cenário de ficar refém dessas informações.
