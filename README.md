@@ -374,5 +374,15 @@ cheque o email para ter certeza que o programa está enviando os dados para o em
 
 Tanto a versão do windows quanto do linux possuem a mesma lógica. Essa seção se focará apenas nas diferenças.
 
+![Bibliotecas_keylogger_windows](Images/33_keylogger_windows_email.png)
+
+a diferença da versão do windows é o uso do da biblioteca pynput para capturar as teclas do windows. É possível instalar essa biblioteca através do comando 
+
+`pip install pynput`
+
+![Bibliotecas_keylogger_windows](Images/34_keylogger_windows_finally.png)
+
+outra diferença para a versão do linux é o finally que garante que o temporizador irá contar e enviar mesmo que possa ter acontecido algum erro durante a execução do código antes dessa parte. Como ambas as versões só diferenciam por usar bibliotecas diferentes na captura das teclas, não é necessário explicar o resto do código, que funciona de maneira similar ao windows, trocando apenas para os comandos equivalentes da biblioteca do teclado específica.
+
 ## Conclusão
 Como um usuário ou empregado que trabalha como informações sensíveis e sigilosas, é importante manter backups frequentes dos seus dados relevantes, isso pode evitar o cenário de ficar refém dessas informações.
