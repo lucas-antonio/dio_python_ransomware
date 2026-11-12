@@ -327,7 +327,7 @@ execute o programa
 
 é possível checar o arquivo log.txt para ver a captura das teclas digitadas
 
-![Checando_o_resultado](Images/25_keylogger_linux_captura_das_teclas_no_keylogger)
+![Checando_o_resultado](Images/25_keylogger_linux_captura_das_teclas_no_keylogger.png)
 
 💡 **Sugestão:** é possível rodar o script em background usando o comando `sudo -b <programa.py`
 
