@@ -372,7 +372,7 @@ cheque o email para ter certeza que o programa está enviando os dados para o em
 
 ### Versão windows
 
-Tanto a versão do windows possuem a mesma lógica. Essa seção se focará apenas nas diferenças.
+Tanto a versão do windows quanto do linux possuem a mesma lógica. Essa seção se focará apenas nas diferenças.
 
 ## Conclusão
 Como um usuário ou empregado que trabalha como informações sensíveis e sigilosas, é importante manter backups frequentes dos seus dados relevantes, isso pode evitar o cenário de ficar refém dessas informações.
